@@ -68,7 +68,7 @@ def simple_package(package_name):
     app.logger.debug('Requesting index for: %s', package_name)
     package_folder = get_package_path(package_name)
     if (is_private(package_name) or (
-            exists(package_name) and app.config['SHOULD_USE_EXISTING'])):
+            exists(package_folder) and app.config['SHOULD_USE_EXISTING'])):
 
         app.logger.debug('Found information of package: %s in local repository',
                          package_name)
